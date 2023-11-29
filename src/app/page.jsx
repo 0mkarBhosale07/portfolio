@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { fira_code } from "./fonts";
 import {
@@ -40,7 +41,7 @@ export default function Home() {
               set while contributing to the positive outcome.
             </p>
 
-            <button className="mt-10 border-2 py-4 px-8 rounded-lg border-[#64FFDA] flex gap-2 items-center text-[#64FFDA] text-lg hover:bg-[#64FFDA] hover:text-[#0A192F] transition-colors duration-200">
+            <button className="hidden lg:flex mt-10 border-2 py-4 px-8 rounded-lg border-[#64FFDA]  gap-2 items-center text-[#64FFDA] text-lg hover:bg-[#64FFDA] hover:text-[#0A192F] transition-colors duration-200">
               <FileTerminal />
 
               <span className={fira_code.className}>Checkout my resume</span>
@@ -48,7 +49,8 @@ export default function Home() {
           </div>
           <div className="photo mx-auto hidden lg:block border-2 border-[#64FFDA] rounded-lg p-2">
             <Image
-              className="rounded-2xl h-fit"
+              priority={true}
+              className="rounded-2xl "
               src="/photo.jpg"
               alt="image"
               width={400}
