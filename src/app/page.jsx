@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import { fira_code } from "./fonts";
 import {
@@ -15,7 +14,25 @@ import FeaturedProjects from "@/components/FeaturedProjects";
 import Link from "next/link";
 import Skills from "@/components/Skills";
 
-export default function Home() {
+async function getProjects() {
+  const res = await fetch(
+    "https://omkarbhosale.vercel.app/api/projects/featured",
+    {
+      method: "GET",
+    }
+  );
+  // console.log(res.json);
+  const data = await res.json(); // Call json() to get the actual JSON data
+  return data;
+}
+
+export default async function Home() {
+  const getProjectData = await getProjects();
+  // console.log(getProjectData);
+  getProjectData.map((data) => {
+    if (data.featured) console.log(data.title);
+  });
+
   return (
     <>
       <main className="px-16">
@@ -31,7 +48,7 @@ export default function Home() {
               Omkar Bhosale
             </h1>
             <h1 className="text-[#8892B0] text-5xl font-bold mt-3 ml-1">
-              I build websites!
+              I build Web Apps!
             </h1>
 
             <p className="mt-5">
@@ -72,33 +89,19 @@ export default function Home() {
             Featured Projects
           </p>
           <div className="projects mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            <FeaturedProjects
-              props={{
-                name: "Movies Log Pro",
-                desc: " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptatum nemo enim omnis, iste laboriosam cumque illo ducimus hic velit magni aliquam natus! Non incidunt blanditiis assumenda laudantium ipsum natus?",
-                tech: ["Vs Code", "HTML", "CSS", "Javascript"],
-                githubLink: "https://github.com",
-                link: "/",
-              }}
-            />
-            <FeaturedProjects
-              props={{
-                name: "AI Chat Model",
-                desc: " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptatum nemo enim omnis, iste laboriosam cumque illo ducimus hic velit magni aliquam natus! Non incidunt blanditiis assumenda laudantium ipsum natus?",
-                tech: ["Python", "NTKL", "PyTorch"],
-                githubLink: "https://github.com",
-                link: "/",
-              }}
-            />
-            <FeaturedProjects
-              props={{
-                name: "Spotify Clone",
-                desc: " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptatum nemo enim omnis, iste laboriosam cumque illo ducimus hic velit magni aliquam natus! Non incidunt blanditiis assumenda laudantium ipsum natus?",
-                tech: ["NextJs", "Spotify API", "React"],
-                githubLink: "https://github.com",
-                link: "/",
-              }}
-            />
+            {getProjectData &&
+              getProjectData.map((data, index) => (
+                <FeaturedProjects
+                  key={index}
+                  props={{
+                    name: data.title,
+                    desc: data.para,
+                    tech: data.tech,
+                    githubLink: data.github,
+                    link: "/",
+                  }}
+                />
+              ))}
           </div>
           <div className="my-2">
             <Link href="/projects" className="underline underline-offset-1">
