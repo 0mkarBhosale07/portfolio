@@ -40,12 +40,13 @@ export default function Home() {
               looking to join as a web developer to continue to grow my skill
               set while contributing to the positive outcome.
             </p>
+            <a download="/resume.pdf">
+              <button className="hidden lg:flex mt-10 border-2 py-4 px-8 rounded-lg border-[#64FFDA]  gap-2 items-center text-[#64FFDA] text-lg hover:bg-[#64FFDA] hover:text-[#0A192F] transition-colors duration-200">
+                <FileTerminal />
 
-            <button className="hidden lg:flex mt-10 border-2 py-4 px-8 rounded-lg border-[#64FFDA]  gap-2 items-center text-[#64FFDA] text-lg hover:bg-[#64FFDA] hover:text-[#0A192F] transition-colors duration-200">
-              <FileTerminal />
-
-              <span className={fira_code.className}>Checkout my resume</span>
-            </button>
+                <span className={fira_code.className}>Checkout my resume</span>
+              </button>
+            </a>
           </div>
           <div className="photo mx-auto hidden lg:block border-2 border-[#64FFDA] rounded-lg p-2">
             <Image
