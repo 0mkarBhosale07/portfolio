@@ -16,7 +16,12 @@ const Navbar = () => {
       <nav className="top-0 bg-opacity-70 backdrop-blur-md bg-[#0A192F] p-4">
         <div className="container mx-auto flex justify-between items-center">
           <div className="w-20 rounded-full">
-            <Image alt="logo" src="/logo.png" width={100} height={100} />
+            <Link
+              className="hover:text-[#64FFDA] font-bold text-lg transition-all duration-200"
+              href="/"
+            >
+              <Image alt="logo" src="/logo.png" width={100} height={100} />
+            </Link>
           </div>
           <div className="flex items-center space-x-4 lg:hidden">
             {/* Mobile Toggle Button */}
@@ -45,7 +50,7 @@ const Navbar = () => {
               </button>
             )}
           </div>
-          <div className="hidden lg:flex items-center space-x-4 ">
+          <div className="hidden lg:flex items-center space-x-20 ">
             {/* Add your navigation links here */}
             <Link
               className="hover:text-[#64FFDA] font-bold text-lg transition-all duration-200"

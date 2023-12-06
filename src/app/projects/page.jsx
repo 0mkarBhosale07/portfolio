@@ -1,5 +1,6 @@
 import { fira_code } from "../fonts";
 import ProjectCard from "@/components/ProjectCard";
+import { ProjectData } from "@/data/projects";
 
 const Projects = () => {
   return (
@@ -10,16 +11,31 @@ const Projects = () => {
         </h1>
 
         <div className="projects">
-          <div className=" p-5 flex justify-around my-3">
+          <div className="  p-5 flex justify-around my-3">
             <h1 className=" font-bold">Year</h1>
             <h1 className="project-name font-bold">Project Name</h1>
             <h1 className="font-bold">Link</h1>
           </div>
-          <ProjectCard name="AI Chat Bot" year="2023" link="/" />
-          <ProjectCard name="AI Chat Bot" year="2023" link="/" />
-          <ProjectCard name="AI Chat Bot" year="2023" link="/" />
-          <ProjectCard name="AI Chat Bot" year="2023" link="/" />
-          <ProjectCard name="AI Chat Bot" year="2023" link="/" />
+
+          {ProjectData.map((val, ind) => (
+            // <h1 key={ind}>{val.year}</h1>
+            <ProjectCard
+              key={ind}
+              name={val.title}
+              link={val.link}
+              year={val.year}
+            />
+            // <ProjectCard
+            //   key={ind}
+            //   props={{
+            //     name: val.title,
+            //     desc: val.para,
+            //     tech: val.tech,
+            //     githubLink: val.github,
+            //     link: val.link,
+            //   }}
+            // />
+          ))}
         </div>
       </div>
     </>

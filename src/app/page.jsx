@@ -15,6 +15,8 @@ import FeaturedProjects from "@/components/FeaturedProjects";
 import Link from "next/link";
 import Skills from "@/components/Skills";
 
+import { FeaturedProjectData } from "@/data/featured";
+
 export default function Home() {
   return (
     <>
@@ -71,16 +73,20 @@ export default function Home() {
             Featured Projects
           </p>
           <div className="projects mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            <FeaturedProjects
-              props={{
-                name: "Movies Log Pro",
-                desc: " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptatum nemo enim omnis, iste laboriosam cumque illo ducimus hic velit magni aliquam natus! Non incidunt blanditiis assumenda laudantium ipsum natus?",
-                tech: ["Vs Code", "HTML", "CSS", "Javascript"],
-                githubLink: "https://github.com",
-                link: "/",
-              }}
-            />
-            <FeaturedProjects
+            {FeaturedProjectData.map((val, ind) => (
+              <FeaturedProjects
+                key={ind}
+                props={{
+                  name: val.title,
+                  desc: val.para,
+                  tech: val.tech,
+                  githubLink: val.github,
+                  link: val.link,
+                }}
+              />
+            ))}
+
+            {/* <FeaturedProjects
               props={{
                 name: "AI Chat Model",
                 desc: " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptatum nemo enim omnis, iste laboriosam cumque illo ducimus hic velit magni aliquam natus! Non incidunt blanditiis assumenda laudantium ipsum natus?",
@@ -88,16 +94,7 @@ export default function Home() {
                 githubLink: "https://github.com",
                 link: "/",
               }}
-            />
-            <FeaturedProjects
-              props={{
-                name: "Spotify Clone",
-                desc: " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptatum nemo enim omnis, iste laboriosam cumque illo ducimus hic velit magni aliquam natus! Non incidunt blanditiis assumenda laudantium ipsum natus?",
-                tech: ["NextJs", "Spotify API", "React"],
-                githubLink: "https://github.com",
-                link: "/",
-              }}
-            />
+            /> */}
           </div>
           <div className="my-2">
             <Link href="/projects" className="underline underline-offset-1">
