@@ -1,10 +1,10 @@
 export const FeaturedProjectData =[{
-    title: "Watch Movie App",
-    para: "Watch Movie Web Application created using NextJs 14 and TheMovieDB API.",
+    title: "Keep It Secret",
+    para: "It is the secret message sharing platform.",
     img: "https://media.discordapp.net/attachments/1066265844167999488/1170719342023950376/Home-screen.jpg?ex=655a105a&is=65479b5a&hm=f3c64adf7ac67b9cb4e9d6c55477a8bd0bbb54895ff36b6d65380f61fd5f28dc&=&width=1231&height=876",
-    tech:["NextJs", "TheMovieDB API"],
-    link: "https://watch-app-three.vercel.app/",
-    github:"/",
+    tech:["NextJs", "Tailwind CSS"],
+    link: "https://keep-it-secret.vercel.app/",
+    github:"https://github.com/0mkarBhosale07/keep-it-secret",
   },
   {
     title: "Codedamn Hacktoberfest 2023",
