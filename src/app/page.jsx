@@ -18,6 +18,11 @@ import Skills from "@/components/Skills";
 import { FeaturedProjectData } from "@/data/featured";
 
 export default function Home() {
+  const handleDownload = () => {
+    const downloadUrl = "/Omkar-Bhosale-Resume.pdf";
+    window.open(downloadUrl);
+  };
+
   return (
     <>
       <main className="px-16">
@@ -46,7 +51,9 @@ export default function Home() {
             <button className="hidden lg:flex mt-10 border-2 py-4 px-8 rounded-lg border-[#64FFDA]  gap-2 items-center text-[#64FFDA] text-lg hover:bg-[#64FFDA] hover:text-[#0A192F] transition-colors duration-200">
               <FileTerminal />
 
-              <span className={fira_code.className}>Checkout my resume</span>
+              <span className={fira_code.className} onClick={handleDownload}>
+                Checkout my resume
+              </span>
             </button>
           </div>
           <div className="photo mx-auto hidden lg:block border-2 border-[#64FFDA] rounded-lg p-2">
