@@ -5,6 +5,7 @@ export const ProjectData = [{
      tech:["NextJs 14", "Tailwind CSS","Crypto-JS"], 
      link: "https://keep-it-secret.vercel.app/", 
      github:"https://github.com/0mkarBhosale07/keep-it-secret", 
+     year:"2023"
    },
   {
     title: "Codedamn Hacktoberfest 2023",

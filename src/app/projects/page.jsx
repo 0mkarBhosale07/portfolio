@@ -12,7 +12,7 @@ const Projects = () => {
 
         <div className="projects">
           <div className="  p-5 flex justify-around my-3">
-            <h1 className=" font-bold">Year</h1>
+            <h1 className=" font-bold hidden md:block">Year</h1>
             <h1 className="project-name font-bold">Project Name</h1>
             <h1 className="font-bold">Link</h1>
           </div>
