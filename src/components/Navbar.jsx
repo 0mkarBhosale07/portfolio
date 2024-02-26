@@ -60,9 +60,9 @@ const Navbar = () => {
             </Link>
             <Link
               className="hover:text-[#64FFDA] font-bold text-lg transition-all duration-200"
-              href="#skills"
+              href="/blog"
             >
-              Skills
+              Blog
             </Link>
             <Link
               className="hover:text-[#64FFDA] font-bold text-lg transition-all duration-200"
@@ -113,9 +113,9 @@ const Navbar = () => {
                 Home
               </span>
             </Link>
-            <Link href="#skills" onClick={toggleSidebar}>
+            <Link href="/blog" onClick={toggleSidebar}>
               <span className="text-2xl font-bold hover:text-[#64FFDA] transition-all duration-200">
-                Skills
+                Blog
               </span>
             </Link>
             <Link href="#projects" onClick={toggleSidebar}>

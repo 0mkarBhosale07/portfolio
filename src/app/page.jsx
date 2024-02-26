@@ -185,12 +185,6 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <footer className="text-center mt-20 mb-5">
-        <h1>Designed and Developed by</h1>
-        <p className="text-[#64FFDA] mt-2">
-          <span className={fira_code.className}>Omkar Bhosale</span>
-        </p>
-      </footer>
     </>
   );
 }
