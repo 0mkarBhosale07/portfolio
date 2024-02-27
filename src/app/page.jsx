@@ -1,4 +1,5 @@
 "use client";
+import RootLayout from "./layout";
 import Image from "next/image";
 import { fira_code } from "./fonts";
 import {

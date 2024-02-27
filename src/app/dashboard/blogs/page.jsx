@@ -1,8 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
-import BlogCard from "@/components/BlogCard";
+import Link from "next/link";
+import BlogList from "../components/BlogList";
 
-const BlogPage = () => {
+const DashboardBlog = () => {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
@@ -15,7 +16,6 @@ const BlogPage = () => {
         }
 
         const data = await res.json();
-        console.log(data); // Log the response data
         setBlogs(data.blogs);
       } catch (error) {
         console.log("Error loading blogs: ", error);
@@ -26,25 +26,27 @@ const BlogPage = () => {
   }, []);
 
   return (
-    <>
-      <header className="mb-5">
-        <h1 className="text-center text-2xl font-bold text-white">
-          Blog Section
-        </h1>
+    <div className="mt-5">
+      <header className="flex justify-center">
+        <Link
+          href="/dashboard/blogs/add"
+          className="bg-teal-400 text-black px-5 py-3 rounded-md text-center font-bold"
+        >
+          Add Post
+        </Link>
       </header>
-      <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+      <div className="blogContents mt-10">
         {blogs.map((blog) => (
-          <BlogCard
-            key={blog._id} // Ensure each item has a unique key
-            name={blog.title}
-            img={blog.image}
-            date={blog.date}
+          <BlogList
+            key={blog._id}
+            title={blog.title}
             id={blog._id}
+            date={blog.date}
           />
         ))}
-      </main>
-    </>
+      </div>
+    </div>
   );
 };
 
-export default BlogPage;
+export default DashboardBlog;
