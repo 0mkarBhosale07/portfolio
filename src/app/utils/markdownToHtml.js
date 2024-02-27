@@ -1,4 +1,4 @@
-import {remark} from 'remark';
+import { remark } from 'remark';
 import remarkHtml from 'remark-html';
 import remarkHighlight from 'remark-highlight.js';
 
@@ -19,10 +19,11 @@ export default async function markdownToHtml(markdown) {
     .replace(/<strong>/g, '<strong class="font-bold">')
     .replace(/<em>/g, '<em class="italic">')
     .replace(/<blockquote>/g, '<blockquote class="border-l-4 pl-4 italic text-gray-600">')
-    .replace(/<code>/g, '<code class="bg-black text-[#64FFDA] p-2 rounded">')
-    .replace(/<pre>/g, '<pre class="bg-black text-[#64FFDA] p-4 mb-4 rounded">')
+    .replace(/<code>/g, '<code class="bg-black text-teal-400 p-2 rounded">') // Apply Tailwind CSS styles for code blocks
+    .replace(/<pre>/g, '<pre class="bg-black text-teal-400 p-4 mb-4 rounded">') // Apply Tailwind CSS styles for pre blocks
     .replace(/<a /g, '<a class="text-blue-500 underline" ')
-    .replace(/<\/a>/g, '</a>');
+    .replace(/<\/a>/g, '</a>')
+    // .replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" />'); // Handle image Markdown syntax
 
   return htmlContent;
 }

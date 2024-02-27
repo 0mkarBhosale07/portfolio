@@ -7,7 +7,7 @@ const SingleBlogPage = () => {
   const [htmlContent, setHtmlContent] = useState("");
 
   const data =
-    "# This is a title \n\n ## This is sub heading \n\n`Hello World`\n\n ```javascript \n const greeting = 'Hello, world!'; \n console.log(greeting);\n ```\n\n Python Code \n\n ```python \n print('Hello World!')\n```\n\n ### End of File";
+    "# This is a title \n\n ## This is sub heading \n\n`Hello World`\n\n ```javascript \n const greeting = 'Hello, world!'; \n console.log(greeting);\n ```\n\n Python Code \n\n ```js \n print('Hello World!')\n```\n\n ### End of File";
 
   useEffect(() => {
     async function parseMarkdown() {
