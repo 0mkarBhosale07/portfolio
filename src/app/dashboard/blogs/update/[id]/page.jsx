@@ -9,7 +9,7 @@ const getTopicById = async (id) => {
     if (!res.ok) {
       throw new Error("Failed to fetch topic");
     }
-
+    console.log(res);
     return res.json();
   } catch (error) {
     console.log(error);

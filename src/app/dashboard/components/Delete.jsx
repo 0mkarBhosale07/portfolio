@@ -9,7 +9,7 @@ export default function DeleteBlog({ id }) {
     const confirmed = confirm("Are you sure?");
 
     if (confirmed) {
-      const res = await fetch(`http://localhost:3000/api/blog?id=${id}`, {
+      const res = await fetch(`/api/blog?id=${id}`, {
         method: "DELETE",
       });
 

@@ -56,7 +56,7 @@ const SingleBlogPage = ({ params }) => {
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <>
+    <div className="">
       <div className="title text-center mt-5 text-white font-bold text-2xl">
         {/* Render blog title here */}
         <h1>{title}</h1>
@@ -68,7 +68,7 @@ const SingleBlogPage = ({ params }) => {
         className="body mx-5 mt-5 lg:mx-40"
         dangerouslySetInnerHTML={{ __html: htmlContent }}
       ></div>
-    </>
+    </div>
   );
 };
 
