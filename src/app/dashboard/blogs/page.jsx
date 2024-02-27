@@ -9,7 +9,7 @@ const DashboardBlog = () => {
   useEffect(() => {
     const getBlog = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/blog");
+        const res = await fetch("/api/blog");
 
         if (!res.ok) {
           throw new Error("Failed to fetch blogs");

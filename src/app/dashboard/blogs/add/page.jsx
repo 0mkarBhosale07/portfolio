@@ -19,7 +19,7 @@ const BlogAddPage = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:3000/api/blog", {
+      const res = await fetch("/api/blog", {
         method: "POST",
         headers: {
           "Content-type": "application/json",

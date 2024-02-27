@@ -2,7 +2,7 @@ import UpdateBlog from "@/app/dashboard/components/Update";
 
 const getTopicById = async (id) => {
   try {
-    const res = await fetch(`http://localhost:3000/api/blog/${id}`, {
+    const res = await fetch(`/api/blog/${id}`, {
       cache: "no-store",
     });
 
