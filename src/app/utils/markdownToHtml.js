@@ -1,9 +1,9 @@
 import { remark } from 'remark';
 import remarkHtml from 'remark-html';
-import remarkHighlight from 'remark-highlight.js';
+import remarkGfm from 'remark-gfm';
 
 export default async function markdownToHtml(markdown) {
-  const result = await remark().use(remarkHtml).use(remarkHighlight).process(markdown);
+  const result = await remark().use(remarkGfm).use(remarkHtml).process(markdown);
   let htmlContent = result.toString();
   htmlContent = htmlContent
     .replace(/<h1>/g, '<h1 class="text-3xl font-bold mb-4">')

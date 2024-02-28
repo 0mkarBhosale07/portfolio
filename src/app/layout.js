@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
           <span className={fira_code.className}>Omkar Bhosale</span>
         </p>
         <p className="text-[#64FFDA] mt-1 text-xs">
-          <span className={fira_code.className}>v2.1.2</span>
+          <span className={fira_code.className}>v2.2.5</span>
         </p>
       </footer>
       </body>
