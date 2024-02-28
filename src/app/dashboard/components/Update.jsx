@@ -15,7 +15,7 @@ export default function UpdateBlog({ id, title, image, content, date }) {
     e.preventDefault();
 
     try {
-      const res = await fetch(`http://localhost:3000/api/blog/${id}`, {
+      const res = await fetch(`/api/blog/${id}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json",

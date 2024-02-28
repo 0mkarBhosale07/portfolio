@@ -19,6 +19,7 @@ const SingleBlogPage = ({ params }) => {
           throw new Error("Failed to fetch blog");
         }
         const data = await response.json();
+        console.log(data);
         return data;
       } catch (error) {
         setError(error);
