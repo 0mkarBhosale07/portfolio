@@ -19,7 +19,7 @@ const SingleBlogPage = ({ params }) => {
           throw new Error("Failed to fetch blog");
         }
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         return data;
       } catch (error) {
         setError(error);
@@ -53,7 +53,27 @@ const SingleBlogPage = ({ params }) => {
     }
   };
 
-  if (loading) return <div>Loading...</div>;
+  if (loading)
+    return (
+      <div className="p-8 max-w-4xl mx-auto">
+        <div className="animate-pulse">
+          {/* Placeholder for title */}
+          <div className="h-8 bg-gray-300 w-3/4 mb-4 rounded"></div>
+          {/* Placeholder for date */}
+          <div className="h-6 bg-gray-300 w-1/4 mb-6 rounded"></div>
+          {/* Placeholder for image */}
+          <div className="h-64 bg-gray-300 mb-8 rounded"></div>
+          {/* Placeholder for content */}
+          <div className="space-y-4">
+            <div className="h-4 bg-gray-300 w-full rounded"></div>
+            <div className="h-4 bg-gray-300 w-full rounded"></div>
+            <div className="h-4 bg-gray-300 w-full rounded"></div>
+            <div className="h-4 bg-gray-300 w-full rounded"></div>
+            <div className="h-4 bg-gray-300 w-3/4 rounded"></div>
+          </div>
+        </div>
+      </div>
+    );
   if (error) return <div>Error: {error.message}</div>;
 
   return (
