@@ -5,6 +5,7 @@ import BlogList from "../components/BlogList";
 
 const DashboardBlog = () => {
   const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getBlog = async () => {
@@ -17,6 +18,7 @@ const DashboardBlog = () => {
 
         const data = await res.json();
         setBlogs(data.blogs);
+        setLoading(false);
       } catch (error) {
         console.log("Error loading blogs: ", error);
       }
@@ -24,6 +26,19 @@ const DashboardBlog = () => {
 
     getBlog();
   }, []);
+
+  const SkeletonLoading = () => (
+    <div className="px-5 md:px-20 animate-pulse">
+      <div className="flex justify-center">
+        <div className="bg-[#112240] py-5 px-10 rounded-md flex justify-around gap-10 my-3 w-[300px] lg:w-[500px]">
+          <div className="bg-teal-200 h-4 w-1/2 mb-2 rounded-md"></div>
+          <div className="bg-gray-300 h-4 w-1/2 mb-2 rounded-md"></div>
+          <div className="bg-gray-300 h-4 w-5 mb-2 rounded-md"></div>
+          <div className="bg-gray-300 h-4 w-5 mb-2 rounded-md"></div>
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <div className="mt-5">
@@ -35,16 +50,26 @@ const DashboardBlog = () => {
           Add Post
         </Link>
       </header>
-      <div className="blogContents mt-10">
-        {blogs.map((blog) => (
-          <BlogList
-            key={blog._id}
-            title={blog.title}
-            id={blog._id}
-            date={blog.date}
-          />
-        ))}
-      </div>
+      {loading ? (
+        <div className="blogContents mt-10">
+          {/* Render skeleton loading if data is still loading */}
+          <SkeletonLoading />
+          <SkeletonLoading />
+          <SkeletonLoading />
+          <SkeletonLoading />
+        </div>
+      ) : (
+        <div className="blogContents mt-10">
+          {blogs.map((blog) => (
+            <BlogList
+              key={blog._id}
+              title={blog.title}
+              id={blog._id}
+              date={blog.date}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
