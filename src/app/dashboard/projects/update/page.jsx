@@ -44,32 +44,32 @@ const DashboardProjectUpdate = () => {
     <div className="mt-5">
      // <header className="flex justify-center">
         //<Link
-          href="/dashboard/blogs/add"
-          className="bg-teal-400 text-black px-5 py-3 rounded-md text-center font-bold"
+         // href="/dashboard/blogs/add"
+        //  className="bg-teal-400 text-black px-5 py-3 rounded-md text-center font-bold"
         >
-          Add Post
-        </Link>
-      </header>
-      {loading ? (
-        <div className="blogContents mt-10">
+          //Add Post
+      //  </Link>
+      //</header>
+    //  {loading ? (
+       // <div className="blogContents mt-10">
           {/* Render skeleton loading if data is still loading */}
-          <SkeletonLoading />
-          <SkeletonLoading />
-          <SkeletonLoading />
-          <SkeletonLoading />
-        </div>
-      ) : (
-        <div className="blogContents mt-10">
-          {blogs.map((blog) => (
-            <BlogList
-              key={blog._id}
-              title={blog.title}
-              id={blog._id}
-              date={blog.date}
-            />
-          ))}
-        </div>
-      )} */}
+          //<SkeletonLoading />
+        //  <SkeletonLoading />
+         // <SkeletonLoading />
+         // <SkeletonLoading />
+       // </div>
+    //  ) : (
+        //<div className="blogContents mt-10">
+         // {blogs.map((blog) => (
+          //  <BlogList
+           //   key={blog._id}
+           //   title={blog.title}
+          //    id={blog._id}
+           //   date={blog.date}
+           // />
+       //   ))}
+       // </div>
+     // )} */}
     </div>
   );
 };
