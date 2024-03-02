@@ -1,10 +1,10 @@
-{/* "use client";
+"use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import BlogList from "../components/BlogList";
 
 const DashboardProjectUpdate = () => {
-  const [blogs, setBlogs] = useState([]);
+  {/* const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -38,11 +38,11 @@ const DashboardProjectUpdate = () => {
         </div>
       </div>
     </div>
-  );
+  );*/}
 
   return (
     <div className="mt-5">
-      <header className="flex justify-center">
+     {*/ <header className="flex justify-center">
         <Link
           href="/dashboard/blogs/add"
           className="bg-teal-400 text-black px-5 py-3 rounded-md text-center font-bold"
@@ -69,10 +69,9 @@ const DashboardProjectUpdate = () => {
             />
           ))}
         </div>
-      )}
+      )} */}
     </div>
   );
 };
 
 export default DashboardProjectUpdate;
-*/}
