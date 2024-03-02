@@ -42,8 +42,8 @@ const DashboardProjectUpdate = () => {
 
   return (
     <div className="mt-5">
-     {*/ <header className="flex justify-center">
-        <Link
+     // <header className="flex justify-center">
+        //<Link
           href="/dashboard/blogs/add"
           className="bg-teal-400 text-black px-5 py-3 rounded-md text-center font-bold"
         >
