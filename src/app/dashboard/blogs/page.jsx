@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import BlogList from "../components/BlogList";
+import { signOut } from "next-auth/react";
 
 const DashboardBlog = () => {
   const [blogs, setBlogs] = useState([]);
@@ -50,6 +51,16 @@ const DashboardBlog = () => {
           Add Post
         </Link>
       </header>
+      <div className="resume-btn mt-10">
+        <button
+          className="bg-[#64FFDA] text-[#0A192F] px-5 py-2 rounded-lg text-2xl font-bold hover:text-white transition-all duration-200 hover:bg-[#11aa86]"
+          onClick={() => {
+            signOut();
+          }}
+        >
+          Logout
+        </button>
+      </div>
       {loading ? (
         <div className="blogContents mt-10">
           {/* Render skeleton loading if data is still loading */}

@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
+import { signOut } from "next-auth/react";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -72,7 +73,7 @@ const Navbar = () => {
             </Link>
             <Link
               className="hover:text-[#64FFDA] font-bold text-lg transition-all duration-200"
-              href="#contact"
+              href="/#contact"
             >
               Contact
             </Link>
@@ -130,7 +131,12 @@ const Navbar = () => {
             </Link>
 
             <div className="resume-btn mt-10">
-              <button className="bg-[#64FFDA] text-[#0A192F] px-5 py-2 rounded-lg text-2xl font-bold hover:text-white transition-all duration-200 hover:bg-[#11aa86]">
+              <button
+                className="bg-[#64FFDA] text-[#0A192F] px-5 py-2 rounded-lg text-2xl font-bold hover:text-white transition-all duration-200 hover:bg-[#11aa86]"
+                onClick={() => {
+                  signOut();
+                }}
+              >
                 Resume
               </button>
             </div>
