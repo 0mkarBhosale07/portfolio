@@ -1,3 +1,4 @@
+import { AuthProvider } from "../Providers"
 import { Inter, Fira_Code } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -11,10 +12,12 @@ export const metadata = {
 }
 const DashboardLayout = ({ children }) => {
     return (
+        <AuthProvider>
         <div className="dashboard-layout">
             {/* Sidebar, navigation, etc. for dashboard */}
             {children}
         </div>
+        </AuthProvider>
     );
 };
 
