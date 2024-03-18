@@ -4,6 +4,10 @@ import Link from "next/link";
 import BlogList from "../components/BlogList";
 import { signOut } from "next-auth/react";
 
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+
 const DashboardBlog = () => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -12,6 +16,8 @@ const DashboardBlog = () => {
     const getBlog = async () => {
       try {
         const res = await fetch("/api/blog");
+        const session = await getServerSession(authOptions);
+        if (!session) redirect("/login");
 
         if (!res.ok) {
           throw new Error("Failed to fetch blogs");
@@ -25,7 +31,14 @@ const DashboardBlog = () => {
       }
     };
 
+    // const checkSession = async () => {
+    //   const session = await getServerSession(authOptions);
+
+    //   if (!session) redirect("/login");
+    // };
+
     getBlog();
+    // checkSession();
   }, []);
 
   const SkeletonLoading = () => (
